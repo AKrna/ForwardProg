@@ -1,11 +1,33 @@
-body{
-	background-color: beige;
-}
-ul.tabs {
+ul.nav{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+	width: 30%;
+	display: block;
+	float: left;
+}
+ul.
+
+.navbar {
+	position: sticky;
+	min-height: 50px;
+	border: 1px solid;
+	float: left;
+}
+li a {
+	display: block;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+
+ul.tabs {
+	list-style-type: none;
+	float: right;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	position: fixed;
 	border: 1px solid #ccc;
 	background-color: #f1f1f1;
 }
@@ -36,43 +58,11 @@ ul.tabs li a:focus, .active{
 	border-top: none;
 }
 
-.sideNav {
-	height: 100%;
-	width: 0;
+.container{
 	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	background-color: black;
-	overflow-x: hidden;
-	padding-top: 60px;
-	transition: 0.5s;
-}
-
-.sideNav a {
-	padding: 8px 8px 8px 32px;
-	text-decoration: none;
-	font-size: 25px;
-	color: #818181;
-	display: block;
-	transition: 0.3s;
-}
-
-.sideNav a:hover, .offcanvas a:focus{
-	color: #f1f1f1;
-}
-
-.sideNav .closebtn{
-	position: absolute;
-	top: 0;
-	right: 25px;
-	font-size: 36px;
-	margin-left: 50px;
-}
-
-#mainPage{
+	height: 100%;
+	width: 100%;
 	background-color: beige;
-	transition: margin-left .5s;
 	padding: 20px;
 }
 
@@ -83,13 +73,4 @@ footer{
 
 #reportinginternship{
 	width: 80%;
-}
-
-#RIContentLeft{
-	float: left;
-	width: 50%;
-}
-#RIContentRight{
-	float: right;
-	width: 50%;
 }

@@ -17,7 +17,7 @@ function openPage(event, tabName) {
 
 function openNav(){
 	document.getElementById("mainNav").style.width = "250px";
-	document.getElementById("mainPage").style.marginLeft = "250px";
+	document.getElementById("container").style.marginLeft = "250px";
 }
 
 function closeNav(){
@@ -26,7 +26,3 @@ function closeNav(){
 }
 
 document.getElementById("defaultOpen").click();
-
-$(document).ready(function (){
-	
-});
