@@ -1,36 +1,41 @@
 <!DOCTYPE html> 
+
+
+
+
 <html>
 	<head>
 		<title>mainPage</title>	
 		<link rel="stylesheet" type="text/css" href="./css/prototype.css">
-		<link rel="stylesheet" type="text/css" href="css/jquery.multiselect.css">
-		<link rel="stylesheet" type="text/css" href="css/prism.css">
-		<link rel="stylesheet" type="text/css" href="css/chosen.css">
-		<link href="font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+                <link rel="stylesheet" type="text/css" href="./css/jquery.multiselect.css">
+                <link rel="stylesheet" type="text/css" href="./css/prism.css">
+                <link rel="stylesheet" type="text/css" href="./css/chosen.css">
 	</head>
 	<body>
-		<div class="sidebar">
-			<a class="button btn-block" href="#">View Advisors</a>
-			<a class="button btn-block" href="#">View Classified</a>
-			<a class="button btn-block" href="#">Log Out</a>
+		<div id="mainNav" class="sideNav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">View Advisors</a>
+			<a href="#">View Jobs</a>
+			<a href="#">Account</a>
+			<a href="#">Log Out</a>
 		</div>
-		<div class="container">
+		
+		<span onclick="openNav()">Menu</span>
+		<div id="mainPage">
 			<ul class="tabs">
 				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'Home')" id="defaultOpen">Home</a></li>
-				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'EditInformation')">Edit Information</a></li>
+                                <li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'EditInformation')">Edit Information</a></li>
 				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'ReportInternship/Job')">Report Internship/Job</a></li>
 				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'ViewListedInternshipsJobs')">View Listed Internships/Jobs</a></li>
+                                
 			</ul>
 		
 			<div id="Home" class="content">
 				<h2>Welcome to your Career Link!!!</h2>
 				<p>This section is for logging in with student rights, faculty rights, or no log in at all.</p>
 			</div>
-			
-			<div id="EditInformation" class="content">
-				<h2>Welcome to your Account Information</h2>
-				<p>This section allows you to make sure we have your information correct! Please make sure the following data is concurrent.</p>
-				<center><h2>Student Profile</h2></center>
+                    <div id="EditInformation" class="content">
+                        <center><h2>Student Profile</h2></center>
                         <form action="php/submitprofile.php" method="post">
                             <fieldset>
                                 <legend>Personal Information</legend>
@@ -873,16 +878,12 @@
                             <input type="button" value="Save" />
                             <input type="submit" value="Submit" />      
                         </form>
-			</div>
-			
+                    </div>
 			<div id="ReportInternship/Job" class="content">
-				<h1>Reporting an Internship or Job</h1>
-				<fieldset><legend>Internship Information</legend>
-				<div id="RIContentLeft">
-					
-				</div>
-				</fieldset>
-				<!--<select id="reportSelect">
+			 this is the beginning of the report internship/job section.
+	
+				<h2>What would you like to report today?</h2>
+				<select id="reportSelect">
 					<option value="internship">Internship</option>
 					<option value="job">Job</option>
 				</select>
@@ -945,21 +946,19 @@
 						</select>
 					</div>
 				</div>
-			</div>-->
 			</div>
-			
-			<div id="ViewListedInternshipsJobs" class="content">
-			<h2>This is what is available to you:</h2>
 			</div>
 		</div>
-		
+	<div id="ViewListedInternshipsJobs" class="content">
+		<h2>This is what is available to you:</h2>
+	</div>
 	<script type="text/javascript" src="./js/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="./js/prototype.js"></script>
-	<script type="text/javascript" src="./js/jquery.multiselect.js"></script>
-	<script type="text/javascript" src="./js/jquery-ui.js"></script>
-		
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-	<script src="./js/chosen.jquery.js" type="text/javascript"></script>
-	<script src="./js/prism.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/jquery.multiselect.js"></script>
+         <script type="text/javascript" src="./js/jquery-ui.js"></script>
+         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+        <script src="./js/chosen.jquery.js" type="text/javascript"></script>
+        <script src="./js/prism.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
