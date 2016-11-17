@@ -15,16 +15,6 @@ function openPage(event, tabName) {
     event.currentTarget.className += " active";
 }
 
-function openNav(){
-	document.getElementById("mainNav").style.width = "250px";
-	document.getElementById("mainPage").style.marginLeft = "250px";
-}
-
-function closeNav(){
-	document.getElementById("mainNav").style.width = "0";
-	document.getElementById("mainPage").style.marginLeft = "0";
-}
-
 document.getElementById("defaultOpen").click();
 
 $(document).ready(function (){
