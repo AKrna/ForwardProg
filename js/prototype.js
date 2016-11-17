@@ -28,5 +28,7 @@ function closeNav(){
 document.getElementById("defaultOpen").click();
 
 $(document).ready(function (){
-	
-});
+	$(".chosen-select").chosen({width: "350px"});
+        $(".chosen-select2").chosen({width: "150px"});
+        
+        });

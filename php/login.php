@@ -18,7 +18,12 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
     $numrows = mysqli_num_rows($result);
     if($numrows == 1)
     {
-        $usertype = 'Student';
+        $row = mysqli_fetch_assoc($result);
+        session_start();
+        $_SESSION["sid"]=$row['sid'];
+        $_SESSION["name"]=$row["username"];
+        header("location: ./../Studenthome.html");
+        
     }
     
     //checks if user is a Advisor
@@ -38,11 +43,7 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
     {
         $usertype = 'Employer';
     }
-    
-    echo '<script language="javascript">';
-    echo 'alert("';
-    echo $usertype;
-    echo '")</script>';
+
 }
 
 

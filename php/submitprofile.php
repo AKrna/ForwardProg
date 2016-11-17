@@ -64,7 +64,7 @@ $mysqlSD = " INSERT INTO StudentDemographics(sid, ClassStanding, SeekingforCredi
         . "'$chours','$degree','$major','$campus','$achievements','$cstatus','$vstatus',"
         . "'$ethnicity','$gender','$dstatus','$vetstatus')";
 mysqli_query($db,$mysqlSD);
-echo '<body> ' . $mysqlSD . '</body>' ;
+
 
 /******************************/
 
@@ -72,25 +72,59 @@ $cobj = sanitize($_POST["cobj"]);
 $ai1 = sanitize($_POST["ai1"]);
 $ai2 = sanitize($_POST["ai2"]);
 
+$mysqlAI = "INSERT INTO StudentAdditionaInfo VALUE('$sid','$cobj','$ai1','$ai2')";
+mysqli_query($db,$mysqlAI);
+
 /******************************/
 
 //Foreign Language Skills
+foreach($_POST["FLskills"] as $language)
+{
+    $mysqlFLS = "INSERT INTO StudentFLSkills VALUES('$sid', '$language')";
+    mysqli_query($db,$mysqlFLS);
+
+}
 
 /******************************/
 
 //tech experience
+foreach($_POST["techexp"] as $techexp)
+{
+    $mysqlte = "INSERT INTO StudentTEchExperience VALUES('$sid', '$techexp')";
+    mysqli_query($db,$mysqlte);
+
+}
+
 
 /******************************/
 
 //job location
+foreach($_POST["jobloc"] as $loc)
+{
+    $mysqljl = "INSERT INTO StudentJobLocation VALUES('$sid', '$loc')";
+    mysqli_query($db,$mysqljl);
+
+}
 
 /******************************/
 
 //addtionalskills
+foreach($_POST["adskill"] as $adskill)
+{
+    $mysqlas = "INSERT INTO StudentAdditionalSkills VALUES('$sid', '$adskill')";
+    mysqli_query($db,$mysqlas);
+
+}
 
 /******************************/
 
 //job target
+foreach($_POST["jobtarget"] as $jobtarg)
+{
+    $mysqljt = "INSERT INTO StudentJobTarget VALUES('$sid', '$jobtarg')";
+    mysqli_query($db,$mysqljt);
+
+}
 
 
 

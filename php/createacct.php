@@ -1,4 +1,5 @@
 <?php
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 require_once './db_connect.php';
 ?>
 
