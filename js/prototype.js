@@ -28,6 +28,7 @@ function closeNav(){
 document.getElementById("defaultOpen").click();
 
 $(document).ready(function (){
+<<<<<<< HEAD:js/prototype.js
 		$(".button").hover(function() {
 			$(this).css("background-color", "yellow");
 			$(this).css("color", "black");
@@ -39,3 +40,9 @@ $(document).ready(function (){
 		$(".chosen-select").chosen({width: "350px"});
 		$(".chosen-select2").chosen({width: "150px"});
 });
+=======
+	$(".chosen-select").chosen({width: "350px"});
+        $(".chosen-select2").chosen({width: "150px"});
+        
+        });
+>>>>>>> 41c0de4f6860a1009c2695e19b1a0bb08cbee319:js/prototype.js
