@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html>
 	<head>
-		<title>mainPage</title>	
+		<title>Student Page</title>	
 		<link rel="stylesheet" type="text/css" href="./css/prototype.css">
 		<link rel="stylesheet" type="text/css" href="css/jquery.multiselect.css">
 		<link rel="stylesheet" type="text/css" href="css/prism.css">
@@ -11,24 +11,21 @@
 	<body>
 		<div class="sidebar">
 			<a class="button btn-block" href="#">View Advisors</a>
-			<a class="button btn-block" href="#">View Classified</a>
 			<a class="button btn-block" href="#">Log Out</a>
 		</div>
 		<div class="container">
 			<ul class="tabs">
-				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'Home')" id="defaultOpen">Home</a></li>
-				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'EditInformation')">Edit Information</a></li>
-				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'ReportInternship/Job')">Report Internship/Job</a></li>
-				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'ViewListedInternshipsJobs')">View Listed Internships/Jobs</a></li>
+				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'StudentProfile')" id="defaultOpen">Student Profile</a></li>
+				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'ViewInternships')">View Internships</a></li>
 			</ul>
 		
-			<div id="Home" class="content">
+			<!--<div id="Home" class="content">
 				<h2>Welcome to your Career Link!!!</h2>
 				<p>This section is for logging in with student rights, faculty rights, or no log in at all.</p>
 			</div>
-			
-			<div id="EditInformation" class="content">
-				<h2>Welcome to your Account Information</h2>
+			-->
+			<div id="StudentProfile" class="content">
+				<h2>Welcome to your Profile!</h2>
 				<p>This section allows you to make sure we have your information correct! Please make sure the following data is concurrent.</p>
 				<center><h2>Student Profile</h2></center>
                         <form action="php/submitprofile.php" method="post">
@@ -875,12 +872,17 @@
                         </form>
 			</div>
 			
-			<div id="ReportInternship/Job" class="content">
-				<h1>Reporting an Internship or Job</h1>
-				<fieldset><legend>Internship Information</legend>
-				<div id="RIContentLeft">
-					
-				</div>
+			<div id="ViewInternships" class="content">
+				<h2>Viewing and Adding New Internships:</h2>
+				<fieldset>
+					<div class="currentInternships">
+						<legend>Your Current Internships:</legend>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div class="newInternshipsq">
+						<legend>New Internship Information</legend>
+					</div>
 				</fieldset>
 				<!--<select id="reportSelect">
 					<option value="internship">Internship</option>
@@ -946,10 +948,6 @@
 					</div>
 				</div>
 			</div>-->
-			</div>
-			
-			<div id="ViewListedInternshipsJobs" class="content">
-			<h2>This is what is available to you:</h2>
 			</div>
 		</div>
 		

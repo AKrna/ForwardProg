@@ -6,26 +6,27 @@ html body{
 }
 
 .container{
-	position: relative;
-	padding: 0 0 0 175px;
+	position: absolute;
+	margin-left: 175px;
+	width: 90%;
 }
 
 .content {
 	display: none;
 	position: relative;
-	padding: 0.01em 16px;
+	padding: 10px 16px;
 	border: 1px solid #000;
 	margin: 5px 0 5px 0;
 }
 
-/*This is all the stuff for the sidebar*/
+/*This is all the css for the sidebar*/
 
 .sidebar {
 	position: fixed;
 	top: 0; bottom: 0; left: 0;
-	height: auto;
 	width: 170px;
 	background: #666699;
+	overflow: hidden;
 }
 
 .button {
@@ -46,26 +47,34 @@ html body{
 	white-space:nowrap;
 }
 
-/*a.button:hover{
-	background-color: yellow;
-}*/
+a.button:hover{
+	background-color: grey;
+}
+
 /*This is the css for the main nav for the different sections!*/
 
 ul.tabs {
 	list-style-type: none;
-	margin: 0;
+	border-radius: 100px;
+	position: sticky;
+	width: 44%;
 	padding: 0;
 	overflow: hidden;
 	border: 1px solid #ccc;
 	background-color: #f1f1f1;
 }
+
 ul.tabs li{
 	float: left;
+	position: sticky;
+	text-align: center;
+	width: 375px;
 }
+
 ul.tabs li a {
 	display: inline-block;
+	width: 250px;
 	color: black;
-	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 	transition: 0.3s;
@@ -80,10 +89,38 @@ ul.tabs li a:focus, .active{
 	background-color: #ccc;
 }
 
-footer{
-	text-align: center;
-	padding: 8px 8px;
+
+/*ADVISOR CSS*/
+
+.advisorContactInfo{
+	width: 300px;
+	clear: both;
 }
+.advisorContactInfo input{
+	width: 100%;
+	clear: both;
+}
+
+/* SUBMIT AND BUTTON CSS */
+
+input[type=submit]{
+	width: 60px;
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+}
+
+input[type=button]{
+	width: 60px;
+	margin: 5px;
+	padding: 5px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+}
+
+/*CSS FOR REPORT/VIEW INTERNSHIP PAGE*/
+
 
 #RIContentLeft{
 	float: left;

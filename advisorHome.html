@@ -10,25 +10,52 @@
 	</head>
 	<body>
 		<div class="sidebar">
-			<a class="button btn-block" href="#">View Classified</a>
 			<a class="button btn-block" href="#">Log Out</a>
 		</div>
 		<div class="container">
 			<ul class="tabs">
-				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'Home')" id="defaultOpen">Home</a></li>
-				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'EditInformation')">Edit Information</a></li>
-				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'ViewInternshipList')">View Internship List</a></li>
+				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'AdvisorProfile')" id="defaultOpen">Advisor Profile</a></li>
 				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'ViewStudents')">View Students</a></li>
 			</ul>
 		
-			<div id="Home" class="content">
+			<!--<div id="Home" class="content">
 				<h2>Advisiors Home Page</h2>
 				<p>This section is for displaying information to the advisors about different students internships and such.</p>
-			</div>
+			</div>-->
 			
-			<div id="EditInformation" class="content">
-				<h2>Welcome to your Account Information</h2>
-				<p>This section allows you to make sure we have your information correct! Please make sure the following data is concurrent. Same as students edit info.</p>
+			<div id="AdvisorProfile" class="content">
+				<div id="advisorInfo">
+					<p>Please sure the folowing information is correct so students can have access to the correct info!</p>
+					<h2>Advisor Contact Info: </h2>
+					<form action="php/submitadvisorprofile.php" method="post">
+						<fieldset>
+							<div class="advisorContactInfo">
+								<p>
+									<label>
+										Full Name *: <input type="text" name="advisorName" required><br>
+									</label>
+								</p>
+								<p>
+									<label>
+										Email *: <input type="text" name="advEmail" required><br>
+									</label>
+								</p>
+								<p>
+									<label>
+										Office Hours *: <input type="text" name="officeHrs" required><br>
+									</label>
+								</p>
+								<p>
+									<label>
+										Office Location *: <input type="text" name="offLocation" required>
+									</label>
+								</p>
+								<input type="button" value="Save" />
+								<input type="submit" value="Submit" />
+							</div>
+						</fieldset>
+					</form>
+				</div>
 			</div>
 			
 			<div id="ViewInternshipList" class="content">
@@ -39,10 +66,8 @@
 			</div>
 			
 			<div id="ViewStudents" class="content">
-			<h2>This is all students that have signed up with us:</h2>
-			<ul id="studentList">
-				
-			</ul>
+			<h2>Search through our records to find who you are looking for:</h2>
+			<input type="text" name="search" placeholder="Search...">
 			</div>
 		</div>
 		

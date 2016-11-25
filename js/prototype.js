@@ -28,13 +28,13 @@ function closeNav(){
 document.getElementById("defaultOpen").click();
 
 $(document).ready(function (){
-		$(".button").hover(function() {
-			$(this).css("background-color", "yellow");
+		/*$(".button").hover(function() {
+			$(this).css("background-color", "graye");
 			$(this).css("color", "black");
 		}, function() {
 			$(this).css("background-color", "#3f51b5");
 			$(this).css("color", "white");
-		});
+		});*/
 	
 		$(".chosen-select").chosen({width: "350px"});
 		$(".chosen-select2").chosen({width: "150px"});
