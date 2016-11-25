@@ -1,0 +1,95 @@
+html body{
+	background-color: beige;
+	font-family: Verdana,sans-serif;
+	font-size: 15px;
+    line-height: 1.5;
+}
+
+.container{
+	position: relative;
+	padding: 0 0 0 175px;
+}
+
+.content {
+	display: none;
+	position: relative;
+	padding: 0.01em 16px;
+	border: 1px solid #000;
+	margin: 5px 0 5px 0;
+}
+
+/*This is all the stuff for the sidebar*/
+
+.sidebar {
+	position: fixed;
+	top: 0; bottom: 0; left: 0;
+	height: auto;
+	width: 170px;
+	background: #666699;
+}
+
+.button {
+    color: white;
+	background: #3f51b5;
+    text-align: center;
+    font-size: 16px;
+    margin: 60px 0;
+	padding: 30px 0 30px 0;
+    cursor: pointer;
+}
+
+.btn-block{
+	width: 100%;
+	display:inline-block;
+	overflow:hidden;
+	text-decoration: none;
+	white-space:nowrap;
+}
+
+/*a.button:hover{
+	background-color: yellow;
+}*/
+/*This is the css for the main nav for the different sections!*/
+
+ul.tabs {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+ul.tabs li{
+	float: left;
+}
+ul.tabs li a {
+	display: inline-block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	transition: 0.3s;
+	font-size: 17px;
+}
+
+ul.tabs li a:hover {
+	background-color: #ddd;
+}
+
+ul.tabs li a:focus, .active{
+	background-color: #ccc;
+}
+
+footer{
+	text-align: center;
+	padding: 8px 8px;
+}
+
+#RIContentLeft{
+	float: left;
+	width: 50%;
+}
+#RIContentRight{
+	float: right;
+	width: 50%;
+}
