@@ -1,40 +1,30 @@
 <?php
+require_once './php/arraystore.php';
+require_once './php/db_connect.php';
 
-$arr = array("lola", "Jax","Dex","Sam", "Jordan");
+$sid = 6;
+$selectFLstmt =  "Select * From StudentFLSkills Where sid = ".$sid;
+$result = mysqli_query($db,$selectFLstmt);
+$FLvalues = array();
+while($row = mysqli_fetch_assoc($result)) 
+{$FLvalues[] = $row['flskill'];}
 
-$selind = array(1,2,5);
+echo '<select multiple name=FLskills[]>';
+
 $i = 0;
-echo '<select multiple>';
-
-foreach ($arr as $key => $value) {
-        $i = $i+1;
-    echo '<option value="pv'.$i.'" ';
-    foreach ($selind as $indkey => $val) 
+foreach ($flskills as $key => $nameval) 
+{
+    $i++;
+    echo '<option value="fs'.$i.'"';
+    foreach ($FLvalues as $key => $val) 
     {
-        if($i == $val)
+        if("fs".$i == $val)
         {
-            echo 'selected';
+            echo ' selected ';
         }
     }
-    echo '>'.$value.'</option>';
-
+    echo '>'.$nameval.'</option>';
 }
-echo '</select>';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
