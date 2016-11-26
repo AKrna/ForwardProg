@@ -1,0 +1,963 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Student Page</title>	
+		<link rel="stylesheet" type="text/css" href="./css/prototype.css">
+		<link rel="stylesheet" type="text/css" href="css/jquery.multiselect.css">
+		<link rel="stylesheet" type="text/css" href="css/prism.css">
+		<link rel="stylesheet" type="text/css" href="css/chosen.css">
+		<link href="font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="sidebar">
+			<a class="button btn-block" href="#">View Advisors</a>
+			<a class="button btn-block" href="#">Log Out</a>
+		</div>
+		<div class="container">
+			<ul class="tabs">
+				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'StudentProfile')" id="defaultOpen">Student Profile</a></li>
+				<li><a href="javascript:void(0)" class="tabLink" onclick="openPage(event,'ViewInternships')">View Internships</a></li>
+			</ul>
+		
+			<!--<div id="Home" class="content">
+				<h2>Welcome to your Career Link!!!</h2>
+				<p>This section is for logging in with student rights, faculty rights, or no log in at all.</p>
+			</div>
+			-->
+			<div id="StudentProfile" class="content">
+				<h2>Welcome to your Profile!</h2>
+				<p>This section allows you to make sure we have your information correct! Please make sure the following data is concurrent.</p>
+				<center><h2>Student Profile</h2></center>
+                        <form action="php/submitprofile.php" method="post">
+                            <fieldset>
+                                <legend>Personal Information</legend>
+                                <fieldset>
+                                <div style="float:left;">
+                                    <p>
+                                    <label>
+                                        First Name *:
+                                        <input type='text' name='fname' required>
+                                    </label>
+                                    <label>
+                                        Middle Initial:
+                                        <input type='text' name='minitial'>
+                                    </label>
+                                    <label>
+                                        Last Name *:
+                                        <input type='text' name='lname' required>
+                                    </label>
+                                    </p>
+                                    <p>
+                                    <label>
+                                       Address 1 *:  
+                                        <input type='text' name='address1' required>
+                                    </label>
+                                    <label>
+                                       Address 2 (optional): 
+                                        <input type='text' name='address2' >
+                                    </label>
+                                    </p>
+                                    <p>
+                                    <label>
+                                        City *:
+                                        <input type='text' name='city' required>
+                                    </label>
+                                    <label>
+                                        State *:
+                                        <select name="state" required class="chosen-select2"><option value="" >--</option>
+                                    <option value="s1">International</option>        
+                                    <option value="s2">AL</option>
+                                    <option value="s3">AK</option>
+                                    <option value="s4">AZ</option>
+                                    <option value="s5">AR</option>
+                                    <option value="s6">CA</option>
+                                    <option value="s7">CO</option>
+                                    <option value="s8">CT</option>
+                                    <option value="s9">DE</option>
+                                    <option value="s10">FL</option>
+                                    <option value="s11">GA</option>
+                                    <option value="s12">HI</option>
+                                    <option value="s13">ID</option>
+                                    <option value="s14">IL</option>
+                                    <option value="s15">IN</option>
+                                    <option value="s16">IA</option>
+                                    <option value="s17">KS</option>
+                                    <option value="s18">KY</option>
+                                    <option value="s19">LA</option>
+                                    <option value="s20">ME</option>
+                                    <option value="s21">MD</option>
+                                    <option value="s22">MA</option>
+                                    <option value="s23">MI</option>
+                                    <option value="s24">MN</option>
+                                    <option value="s25">MS</option>
+                                    <option value="s26">MO</option>
+                                    <option value="s27">MT</option>
+                                    <option value="s28">NE</option>
+                                    <option value="s29">NV</option>
+                                    <option value="s30">NH</option>
+                                    <option value="s31">NJ</option>
+                                    <option value="s32">NM</option>
+                                    <option value="s33">NY</option>
+                                    <option value="s34">NC</option>
+                                    <option value="s35">ND</option>
+                                    <option value="s36">OH</option>
+                                    <option value="s37">OK</option>
+                                    <option value="s38">OR</option>
+                                    <option value="s39">PA</option>
+                                    <option value="s40">RI</option>
+                                    <option value="s41">SC</option>
+                                    <option value="s42">SD</option>
+                                    <option value="s43">TN</option>
+                                    <option value="s44">TX</option>
+                                    <option value="s45">UT</option>
+                                    <option value="s46">VT</option>
+                                    <option value="s47">VA</option>
+                                    <option value="s48">WA</option>
+                                    <option value="s49">WV</option>
+                                    <option value="s50">WI</option>
+                                    <option value="s51">WY</option>
+                                        </select>
+                                    </label>
+                                    <label>
+                                        Country:
+                                        <input type='text' name='country'>
+                                    </label>
+                                    </p>
+                                </div>
+                                <div style="float:left;">
+                                <p>
+                                    <label>
+                                        Phone Number *:<input type='text' name='phonenum' required>
+                                    </label>
+                                    <label>
+                                        Cell Number:
+                                        <input type='text' name='cellnum' >
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        Cell Carrier:
+                                        <input type='text' name='carrier' >
+                                    </label>
+                                    <label>
+                                        Cell Carrier Domain:
+                                        <input type='text' name='carrierdom' >
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        Email Address 1 *: 
+                                        <input type='text' name='email' required>
+                                    </label>
+                                <label>
+                                    Email Address 2 (optional): 
+                                    <input type='text' name='email2' />
+                                </label>
+                                </p>
+                                </div>
+                                </fieldset>
+                                <dl>
+                                    <dt><label>Allow Text Messages From Career Service Offices?</label></dt>
+                                    <dd>
+                                        <label><input type='radio' name='pq1' value='y' checked='checked' /> Yes</label> 
+                                        <label><input type='radio' name='pq1' value='n' /> No</label>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label>Allow Text Messages From Job Agents?</label></dt>
+                                    <dd>
+                                        <label><input type='radio' name='pq2' value='y' checked='checked' /> Yes</label> 
+                                        <label><input type='radio' name='pq2' value='n' /> No</label>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label>Allow Text Messages For Event Reminders?</label></dt>
+                                    <dd>
+                                        <label><input type='radio' name='pq3' value='y' checked='checked' /> Yes</label> 
+                                        <label><input type='radio' name='pq3' value='n' /> No</label>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><label>Subscribe To Emails? *</label></dt>
+                                    <dd>
+                                        <label><input type='radio' name='pq4' value='y' checked='checked' /> Yes</label> 
+                                        <label><input type='radio' name='pq4' value='n' /> No</label>
+                                    </dd>
+                                </dl>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Demographic Information</legend>
+                                <div style="float:left;">
+                                <label>
+                                        Class Standing:
+                                        <input type='text' name='cstanding' />
+                                </label>
+                                <dl>
+                                    <dt><label>Seeking Coop/Internship For Credit?</label></dt>
+                                    <dd>
+                                        <label><input type='radio' name='dq1' value='y' checked='checked' /> Yes</label> 
+                                        <label><input type='radio' name='dq1' value='n' /> No</label>
+                                    </dd>
+                                </dl>
+                                <label>
+                                        Graduation Month *:
+                                        <select name="gmonth" required class="chosen-select2"><option value="" >---</option>
+                                    <option value="gm1">MAY</option>
+                                    <option value="gm2">AUG</option>
+                                    <option value="gm3">DEC</option>
+                                        </select>
+                                </label>
+                                /
+                                <label>
+                                    Graduation Year *:
+                                        <select name="gyear" class="chosen-select2" required><option value="" >----</option>
+                                    <option value="gy1">1970</option>
+                                    <option value="gy2">1971</option>
+                                    <option value="gy3">1972</option>
+                                    <option value="gy4">1972</option>
+                                    <option value="gy5">1973</option>
+                                    <option value="gy6">1974</option>
+                                    <option value="gy7">1975</option>
+                                    <option value="gy8">1976</option>
+                                    <option value="gy9">1977</option>
+                                    <option value="gy10">1978</option>
+                                    <option value="gy11">1979</option>
+                                    <option value="gy12">1980</option>
+                                    <option value="gy13">1981</option>
+                                    <option value="gy14">1982</option>
+                                    <option value="gy15">1983</option>
+                                    <option value="gy16">1984</option>
+                                    <option value="gy17">1985</option>
+                                    <option value="gy18">1986</option>
+                                    <option value="gy19">1987</option>
+                                    <option value="gy20">1988</option>
+                                    <option value="gy21">1989</option>
+                                    <option value="gy22">1990</option>
+                                    <option value="gy23">1991</option>
+                                    <option value="gy24">1992</option>
+                                    <option value="gy25">1993</option>
+                                    <option value="gy26">1994</option>
+                                    <option value="gy27">1995</option>
+                                    <option value="gy28">1996</option>
+                                    <option value="gy29">1997</option>
+                                    <option value="gy30">1998</option>
+                                    <option value="gy31">1999</option>
+                                    <option value="gy32">2000</option>
+                                    <option value="gy33">2001</option>
+                                    <option value="gy34">2002</option>
+                                    <option value="gy35">2003</option>
+                                    <option value="gy36">2004</option>
+                                    <option value="gy37">2005</option>
+                                    <option value="gy38">2006</option>
+                                    <option value="gy39">2007</option>
+                                    <option value="gy40">2008</option>
+                                    <option value="gy41">2009</option>
+                                    <option value="gy42">2010</option>
+                                    <option value="gy43">2011</option>
+                                    <option value="gy44">2012</option>
+                                    <option value="gy45">2013</option>
+                                    <option value="gy46">2014</option>
+                                    <option value="gy47">2015</option>
+                                    <option value="gy48">2016</option>
+                                    <option value="gy49">2017</option>
+                                    <option value="gy50">2018</option>
+                                    <option value="gy51">2019</option>
+                                    <option value="gy52">2020</option>
+                                        </select>
+                                </label>
+                                <p>
+                                <label>
+                                        Overall GPA *:
+                                        <input type='text' name='overallgpa' required>
+                                </label>
+                                <label>
+                                        Major GPA *:
+                                        <input type='text' name='majorgpa' required>
+                                </label>
+                                </p>
+                                <p>
+                                <label>
+                                        Credit Hours Completed:
+                                        <input type='text' name='chours' />
+                                </label>
+                                </p>
+                                
+                                <p>
+                                    <label>
+                                    Degree *:
+                                        <select name="degree" required class="chosen-select2"><option value="" >---------</option>
+                                    <option value="d1">Bachalors Degree</option>
+                                    <option value="d2">Non Degree</option>
+                                    <option value="d3">Masters Degree</option>
+                                    <option value="d4">Doctorate</option>
+                                        </select>
+                                </label>
+                                    <label>
+                                        Major:
+                                        <input type='text' name='major' />
+                                    </label>
+                                </p>
+                                <p>
+                                     <label>
+                                    Campus:
+                                        <select name="campus" required class="chosen-select2"><option value="" >---------</option>
+                                    <option value="c1">Boca Raton Campus</option>
+                                    <option value="c2">Davie Campus</option>
+                                    <option value="c3">Fort Lauderdale-Downtown Campus</option>
+                                    <option value="c4">John D. MacArthur Campus</option>
+                                    <option value="c5">Sea Tech Campus</option>
+                                        </select>
+                                </label>
+                                </p>
+                                </div>
+                                <div style="float:right;">
+                                    <p>
+                                        <dl>
+                                        <dt><label>Achievements:</label></dt>
+                                        <dd>
+                                            <textarea rows="4" cols="75" name="achievements"></textarea>
+                                        </dd>
+                                        </dl>
+                                    </p>
+                                    <p>
+                                        <label>
+                                    Citizenship Status *:
+                                        <select name="cstatus" required class="chosen-select2"><option value="" >---------</option>
+                                    <option value="cs1">*N/A</option>
+                                    <option value="cs2">Other</option>
+                                    <option value="cs3">U.S. Citizen</option>
+                                    <option value="cs4">Permanent Resident</option>
+                                    <option value="cs5">Non US - Not Qualified to Work</option>
+                                    <option value="cs6">Non US - Qualified to Work</option>
+                                        </select>
+                                        </label>
+                                        <label>
+                                    Visa Status:
+                                        <select name="vstatus" required class="chosen-select2"><option value="" >---------</option>
+                                    <option value="vs1">Other</option>
+                                    <option value="vs2">*N/A</option>
+                                    <option value="vs3">Canadian Work Authorization</option>
+                                    <option value="vs4">Employment (H-1) Visa</option>
+                                    <option value="vs5">F-2 Visa</option>
+                                    <option value="vs6">H-2 Visa</option>
+                                    <option value="vs7">H-4 Visa</option>
+                                    <option value="vs8">J-1 Visa (Exchange Program)</option>
+                                    <option value="vs9">J-2 Visa</option>
+                                    <option value="vs10">L-1 Visa</option>
+                                    <option value="vs11">L-2 Visa</option>
+                                    <option value="vs12">H-2 Visa</option>
+                                    <option value="vs13">H-2 Visa</option>
+                                    <option value="vs14">Permanent Resident</option>
+                                    <option value="vs15">Student (F-1) Visa</option>
+                                        </select>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                    Ethnicity *:
+                                        <select name="ethnicity" required class="chosen-select2"><option value="" >---------</option>
+                                    <option value="e1">African American/Black</option>
+                                    <option value="e2">Asian or Pacific Islander</option>
+                                    <option value="e3">Caucasian, Non-Hispanic</option>
+                                    <option value="e4">Do Not Wish To Provide</option>
+                                    <option value="e5">Hispanic/Latino</option>
+                                    <option value="e6">Multi Cultural</option>
+                                    <option value="e7">Native American or Alaskan Native</option>
+                                    <option value="e8">Other</option>
+                                        </select>
+                                        </label>
+                                        <label>
+                                    Gender *:
+                                        <select name="gender" required class="chosen-select2"><option value="" >---------</option>
+                                    <option value="g1">Do Not Wish To Provide</option>
+                                    <option value="g2">Female</option>
+                                    <option value="g3">Male</option>
+                                        </select>
+                                        </label>
+                                    </p>
+                                    <p>
+                                         <label>
+                                    Disabled Status *:
+                                        <select name="dstatus" required class="chosen-select2"><option value="" >---------</option>
+                                    <option value="ds1">Do Not Wish To Provide</option>
+                                    <option value="ds2">No</option>
+                                    <option value="ds3">Yes</option>
+                                        </select>
+                                        </label>
+                                         <label>
+                                    Veteran Status *:
+                                        <select name="vetstatus" required class="chosen-select2"><option value="" >---------</option>
+                                    <option value="vets1">No</option>
+                                    <option value="vets2">Yes</option>
+                                        </select>
+                                        </label>
+                                    </p>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Job Related Skills/Information</legend>
+                                <div style="float:left;">
+                                    <p>
+                                        <label>
+                                    Foreign Language Skills:
+                                    <select class="chosen-select" name="FLskills[]" multiple >
+                                            <option value="fs1">Afrikaans</option>
+                                            <option value="fs2">Albanian</option>
+                                            <option value="fs3">American Sign</option>
+                                            <option value="fs4">American Sign Language</option>
+                                            <option value="fs5">Arabic</option>
+                                            <option value="fs6">Armenian</option>
+                                            <option value="fs7">Assyrian</option>
+                                            <option value="fs8">Azebaijani</option>
+                                            <option value="fs9">Belarussian</option>
+                                            <option value="fs10">Bengali</option>
+                                            <option value="fs11">Bilingual</option>
+                                            <option value="fs12">Bosnian</option>
+                                            <option value="fs13">Bulgarian</option>
+                                            <option value="fs14">Cambodian</option>
+                                            <option value="fs15">Cantonese</option>
+                                            <option value="fs16">Catalan</option>
+                                            <option value="fs17">Chinese</option>
+                                            <option value="fs18">Chinese - Cantonese</option>
+                                            <option value="fs19">Chinese - Mandarin</option>
+                                            <option value="fs20">Creole</option>
+                                            <option value="fs21">Croatian</option>
+                                            <option value="fs22">Czech</option>
+                                            <option value="fs23">Danish</option>
+                                            <option value="fs24">Dutch</option>
+                                            <option value="fs25">English</option>
+                                            <option value="fs26">English as a second language</option>
+                                            <option value="fs27">Estonian</option>
+                                            <option value="fs28">Farsi</option>
+                                            <option value="fs29">Filipino</option>
+                                            <option value="fs30">Finnish</option>
+                                            <option value="fs31">Flemish</option>
+                                            <option value="fs32">French</option>
+                                            <option value="fs33">Gaelic</option>
+                                            <option value="fs34">German</option>
+                                            <option value="fs35">Greek</option>
+                                            <option value="fs36">Guarni</option>
+                                            <option value="fs37">Gujarati</option>
+                                            <option value="fs38">Haitian</option>
+                                            <option value="fs39">Hakka</option>
+                                            <option value="fs40">Hebrew</option>
+                                            <option value="fs41">Hindi</option>
+                                            <option value="fs42">Hmong</option>
+                                            <option value="fs43">Hungarian</option>
+                                            <option value="fs44">Icelandic</option>
+                                            <option value="fs45">Indonesian</option>
+                                            <option value="fs46">Italian</option>
+                                            <option value="fs47">Japanese</option>
+                                            <option value="fs48">Kannada</option>
+                                            <option value="fs49">Khmer</option>
+                                            <option value="fs50">Korean</option>
+                                            <option value="fs51">Kurdish</option>
+                                            <option value="fs52">Lakota</option>
+                                            <option value="fs53">Laotian</option>
+                                            <option value="fs54">Latin</option>
+                                            <option value="fs55">Latvian</option>
+                                            <option value="fs56">Lingala</option>
+                                            <option value="fs57">Lithuanian</option>
+                                            <option value="fs58">Luganda</option>
+                                            <option value="fs59">Macedonian</option>
+                                            <option value="fs60">Malay</option>
+                                            <option value="fs61">Malayalam</option>
+                                            <option value="fs62">Mandarin</option>
+                                            <option value="fs63">Maori</option>
+                                            <option value="fs64">Marathi</option>
+                                            <option value="fs65">Mongolian</option>
+                                            <option value="fs66">Native American</option>
+                                            <option value="fs67">Nepalese</option>
+                                            <option value="fs68">Norwegian</option>
+                                            <option value="fs69">Other</option>
+                                            <option value="fs70">Persian</option>
+                                            <option value="fs71">Polish</option>
+                                            <option value="fs72">Portugese</option>
+                                            <option value="fs73">Punjabi</option>
+                                            <option value="fs74">Romanian</option>
+                                            <option value="fs75">Russian</option>
+                                            <option value="fs76">Samoan</option>
+                                            <option value="fs77">Sanskrit</option>
+                                            <option value="fs78">Serbian</option>
+                                            <option value="fs79">Sihhalese</option>
+                                            <option value="fs80">Sindi</option>
+                                            <option value="fs81">Sinhala</option>
+                                            <option value="fs82">Slavic</option>
+                                            <option value="fs83">Slovak</option>
+                                            <option value="fs84">Spanish</option>
+                                            <option value="fs85">Swahili/Kiswahili</option>
+                                            <option value="fs86">Swedish</option>
+                                            <option value="fs87">Tagalog</option>
+                                            <option value="fs88">Taiwanese</option>
+                                            <option value="fs89">Tamil</option>
+                                            <option value="fs90">Telugu</option>
+                                            <option value="fs91">Thai</option>
+                                            <option value="fs92">Tibetan</option>
+                                            <option value="fs93">Turkish</option>
+                                            <option value="fs94">Ukrainian</option>
+                                            <option value="fs95">Urdu</option>
+                                            <option value="fs96">Uzbek</option>
+                                            <option value="fs97">Vietnamese</option>
+                                            <option value="fs98">Welsh</option>
+                                            <option value="fs99">Wolof</option>
+                                            <option value="fs100">Yiddish</option>
+                                            <option value="fs101">Yoruba</option>
+                                            <option value="fs102">Zulu</option>
+                                        </select>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                    Job Location:
+                                        <select name="jobloc[]" class="chosen-select" multiple>
+                                    <option value="j1">All South Florida</option>
+                                    <option value="j2">Broward County</option>
+                                    <option value="j3">Indian River County</option>
+                                    <option value="j4">Martin County</option>
+                                    <option value="j5">Miami-Dade County</option>
+                                    <option value="j6">Midwest U.S.</option>
+                                    <option value="j7">Northeast U.S.</option>
+                                    <option value="j8">Northwest U.S.</option>
+                                    <option value="j9">Other Florida</option>
+                                    <option value="j10">Palm Beach County</option>
+                                    <option value="j11">Southeast U.S.</option>
+                                    <option value="j12">Southwest U.S.</option>
+                                        </select>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div style="float:right;">
+                                    <p>
+                                        <label>
+                                    Technical/Computer Experience:
+                                        <select name="techexp[]" class="chosen-select" multiple>
+                                    <option value="t1">Access</option>
+                                    <option value="t2">Analysis</option>
+                                    <option value="t3">C# Programming</option>
+                                    <option value="t4">C++ Programming</option>
+                                    <option value="t5">Client/Server</option>
+                                    <option value="t6">Database</option>
+                                    <option value="t7">Database - dBase</option>
+                                    <option value="t8">Database - FoxPro</option>
+                                    <option value="t9">Database - Informix</option>
+                                    <option value="t10">Database - MS Access</option>
+                                    <option value="t11">Database - Oracle</option>
+                                    <option value="t12">Database - Paradox</option>
+                                    <option value="t13">Database - SQL Server</option>
+                                    <option value="t14">Database - Sybase</option>
+                                    <option value="t15">Design - 3 - Tier Architecture</option>
+                                    <option value="t16">Design - Advance Web Design</option>
+                                    <option value="t17">Design - Data modeling</option>
+                                    <option value="t18">Design - Engineering Design</option>
+                                    <option value="t19">Design - Flash</option>
+                                    <option value="t20">Design - Graphic Design</option>
+                                    <option value="t21">Design - Interface Design</option>
+                                    <option value="t22">Design - MATLAB</option>
+                                    <option value="t23">Design - OOA/OOD/OOP</option>
+                                    <option value="t24">Design - Other - Design</option>
+                                    <option value="t25">Design - SPICE</option>
+                                    <option value="t26">Design - VHDL</option>
+                                    <option value="t27">Design - Web Design</option>
+                                    <option value="t28">General Skills - ASPA</option>
+                                    <option value="t29">General Skills - Audio/Video</option>
+                                    <option value="t30">General Skills - Authoring System Software</option>
+                                    <option value="t31">General Skills - B - Tree</option>
+                                    <option value="t32">General Skills - BAAN</option>
+                                    <option value="t33">General Skills - Backup/Restore Utilities</option>
+                                    <option value="t34">General Skills - Computer Graphics</option>
+                                    <option value="t35">General Skills - Computer Operations</option>
+                                    <option value="t36">General Skills - Configuration Management</option>
+                                    <option value="t37">General Skills - Data Mining/Warehousing</option>
+                                    <option value="t38">General Skills - Database Administration</option>
+                                    <option value="t39">General Skills - Encryption Standards</option>
+                                    <option value="t40">General Skills - ERP</option>
+                                    <option value="t41">General Skills - FTP</option>
+                                    <option value="t42">General Skills - Hardware</option>
+                                    <option value="t43">General Skills - Help Desk/Tech Support</option>
+                                    <option value="t44">General Skills - Internet</option>
+                                    <option value="t45">General Skills - Mainframes</option>
+                                    <option value="t46">General Skills - MCSE</option>
+                                    <option value="t47">General Skills - Minicomputers</option>
+                                    <option value="t48">General Skills - Numerical Skills</option>
+                                    <option value="t49">General Skills - Office Applications</option>
+                                    <option value="t50">General Skills - Other</option>
+                                    <option value="t51">General Skills - Presentation Programs - Other</option>
+                                    <option value="t52">General Skills - Pro Engineer</option>
+                                    <option value="t53">General Skills - Programming</option>
+                                    <option value="t54">General Skills - Project Management</option>
+                                    <option value="t55">General Skills - Quality Assurance</option>
+                                    <option value="t56">General Skills - Relational Database Mgmt</option>
+                                    <option value="t57">General Skills - Robotics</option>
+                                    <option value="t58">General Skills - SAP</option>
+                                    <option value="t59">General Skills - Spreadsheets</option>
+                                    <option value="t60">General Skills - Statistics</option>
+                                    <option value="t61">General Skills - Technical Writing</option>
+                                    <option value="t62">General Skills - Troubleshooting</option>
+                                    <option value="t63">General Skills - VLSI</option>
+                                    <option value="t64">General Skills - Word Processing</option>
+                                    <option value="t65">HTML</option>
+                                    <option value="t66">JAVA</option>
+                                    <option value="t67">Language/Tools - .NET</option>
+                                    <option value="t68">Language/Tools - 4GL</option>
+                                    <option value="t69">Language/Tools - Assembler</option>
+                                    <option value="t70">Language/Tools - BASIC</option>
+                                    <option value="t71">Language/Tools - C</option>
+                                    <option value="t72">Language/Tools - C++</option>
+                                    <option value="t73">Language/Tools - CACTI</option>
+                                    <option value="t74">Language/Tools - CGI</option>
+                                    <option value="t75">Language/Tools - CICS</option>
+                                    <option value="t76">Language/Tools - COBOL</option>
+                                    <option value="t77">Language/Tools - COM</option>
+                                    <option value="t78">Language/Tools - Communications</option>
+                                    <option value="t79">Language/Tools - CORBA</option>
+                                    <option value="t80">Language/Tools - FORTRAN</option>
+                                    <option value="t81">Language/Tools - Fourth Dimension</option>
+                                    <option value="t82">Language/Tools - HTML</option>
+                                    <option value="t83">Language/Tools - HTML Editors</option>
+                                    <option value="t84">Language/Tools - ISQL</option>
+                                    <option value="t85">Language/Tools - Java</option>
+                                    <option value="t86">Language/Tools - JavaScript</option>
+                                    <option value="t87">Language/Tools - JCL</option>
+                                    <option value="t88">Language/Tools - Macromedia</option>
+                                    <option value="t89">Language/Tools - Macromedia ColdFusion</option>
+                                    <option value="t90">Language/Tools - MFC/ATL/WinAPI</option>
+                                    <option value="t91">Language/Tools - Pascal</option>
+                                    <option value="t92">Language/Tools - Perl</option>
+                                    <option value="t93">Language/Tools - PowerBuilder</option>
+                                    <option value="t94">Language/Tools - RealTime/Drvs/Embed Systm</option>
+                                    <option value="t95">Language/Tools - RPG</option>
+                                    <option value="t96">Language/Tools - Shell Scripting</option>
+                                    <option value="t97">Language/Tools - SimpleScaler</option>
+                                    <option value="t98">Language/Tools - SQL</option>
+                                    <option value="t99">Language/Tools - Verilog</option>
+                                    <option value="t100">Language/Tools - Visual Basics</option>
+                                    <option value="t101">Language/Tools - XML</option>
+                                    <option value="t102">Network Administration - A+ Certification</option>
+                                    <option value="t103">Network Administration - Accounting/Payroll Sfwre</option>
+                                    <option value="t104">Network Administration - AIX Operating System</option>
+                                    <option value="t105">Network Administration - Analysis/Rpting/Model dev</option>
+                                    <option value="t106">Network Administration - Apple Mac OS</option>
+                                    <option value="t107">Network Administration - AS/400</option>
+                                    <option value="t108">Network Administration - AT&T StarLAN</option>
+                                    <option value="t109">Network Administration - Cisco</option>
+                                    <option value="t110">Network Administration - DOS</option>
+                                    <option value="t111">Network Administration - Firewalls</option>
+                                    <option value="t112">Network Administration - LAN.WAN Administration</option>
+                                    <option value="t113">Network Administration - Network Management</option>
+                                    <option value="t114">Network Administration - Novell Network</option>
+                                    <option value="t115">Network Administration - Other</option>
+                                    <option value="t116">Network Administration - Pathworks</option>
+                                    <option value="t117">Network Administration - TCP/IP</option>
+                                    <option value="t118">Networking</option>
+                                    <option value="t119">Operating Systems - AIX Operating Systems</option>
+                                    <option value="t120">Operating Systems - Apple Mac OS</option>
+                                    <option value="t121">Operating Systems - AS/400</option>
+                                    <option value="t122">Operating Systems - DOS</option>
+                                    <option value="t123">Operating Systems - Linux</option>
+                                    <option value="t124">Operating Systems - Macintosh</option>
+                                    <option value="t125">Operating Systems - MVS</option>
+                                    <option value="t126">Operating Systems - Other</option>
+                                    <option value="t127">Operating Systems - Sun/Solaris</option>
+                                    <option value="t128">Operating Systems - Unix</option>
+                                    <option value="t129">Operating Systems - VAX</option>
+                                    <option value="t130">Operating Systems - VMS</option>
+                                    <option value="t131">Operating Systems - Windows 95/98/NT/2000/XP</option>
+                                    <option value="t132">Operating Systems - X/Windows</option>
+                                    <option value="t133">Oracle</option>
+                                    <option value="t134">PC</option>
+                                    <option value="t135">Software Packages - 3D CAD</option>
+                                    <option value="t136">Software Packages - A+ Certification</option>
+                                    <option value="t137">Software Packages - ACT</option>
+                                    <option value="t138">Software Packages - Adobe Acrobat</option>
+                                    <option value="t139">Software Packages - Adobe Acrobat Reader</option>
+                                    <option value="t140">Software Packages - Adobe FrameMaker</option>
+                                    <option value="t141">Software Packages - Adobe Illustrator</option>
+                                    <option value="t142">Software Packages - Adobe Indesign</option>
+                                    <option value="t143">Software Packages - Adobe Macromedia DreamWeaver</option>
+                                    <option value="t144">Software Packages - Adobe PageMaker</option>
+                                    <option value="t145">Software Packages - Adobe PageMill</option>
+                                    <option value="t146">Software Packages - Adobe PhotoShop</option>
+                                    <option value="t147">Software Packages - ACRVIEW</option>
+                                    <option value="t148">Software Packages - AT&T StarLAN</option>
+                                    <option value="t149">Software Packages - AutoCAD</option>
+                                    <option value="t150">Software Packages - Avid</option>
+                                    <option value="t151">Software Packages - Bloomberg</option>
+                                    <option value="t152">Software Packages - CAD</option>
+                                    <option value="t153">Software Packages - CAD/CAM</option>
+                                    <option value="t154">Software Packages - Cadence Design Suite</option>
+                                    <option value="t155">Software Packages - CAM</option>
+                                    <option value="t156">Software Packages - CASE</option>
+                                    <option value="t157">Software Packages - Cisco</option>
+                                    <option value="t158">Software Packages - Clarion</option>
+                                    <option value="t159">Software Packages - Claris Works</option>
+                                    <option value="t160">Software Packages - Corel Office</option>
+                                    <option value="t161">Software Packages - Crystal Reports</option>
+                                    <option value="t162">Software Packages - Desktop Publishing</option>
+                                    <option value="t163">Software Packages - Director</option>
+                                    <option value="t164">Software Packages - Drawing Programs</option>
+                                    <option value="t165">Software Packages - Eudora</option>
+                                    <option value="t166">Software Packages - FileMarker Pro</option>
+                                    <option value="t167">Software Packages - Final Draft</option>
+                                    <option value="t168">Software Packages - Firewalls</option>
+                                    <option value="t169">Software Packages - Geographical Info Systems</option>
+                                    <option value="t170">Software Packages - GoLive</option>
+                                    <option value="t171">Software Packages - GroupWork</option>
+                                    <option value="t172">Software Packages - Harvard Graphics</option>
+                                    <option value="t173">Software Packages - Internet Applications</option>
+                                    <option value="t174">Software Packages - LAN/WAN Administration</option>
+                                    <option value="t175">Software Packages - Lexis/Nexis</option>
+                                    <option value="t176">Software Packages - Lindo</option>
+                                    <option value="t177">Software Packages - LOGSIM</option>
+                                    <option value="t178">Software Packages - Lotus 1-2-3</option>
+                                    <option value="t179">Software Packages - Lotus cc:Mail</option>
+                                    <option value="t180">Software Packages - Lotus Notes</option>
+                                    <option value="t181">Software Packages - Lotus SmartSuite</option>
+                                    <option value="t182">Software Packages - Macromedia DreamWeaver</option>
+                                    <option value="t183">Software Packages - Maple</option>
+                                    <option value="t184">Software Packages - Mathcad</option>
+                                    <option value="t185">Software Packages - Mathematica</option>
+                                    <option value="t186">Software Packages - MovieMagic</option>
+                                    <option value="t187">Software Packages - MS Excel</option>
+                                    <option value="t188">Software Packages - MS FrontPage</option>
+                                    <option value="t189">Software Packages - MS Internet Explorer</option>
+                                    <option value="t190">Software Packages - MS Multimedia</option>
+                                    <option value="t191">Software Packages - MS Netscape Navigator</option>
+                                    <option value="t192">Software Packages - MS Office</option>
+                                    <option value="t193">Software Packages - MS OutLook</option>
+                                    <option value="t194">Software Packages - MS PowerPoint</option>
+                                    <option value="t195">Software Packages - MS Word</option>
+                                    <option value="t196">Software Packages - NewsEdit</option>
+                                    <option value="t197">Software Packages - Novell Netware</option>
+                                    <option value="t198">Software Packages - NUD*IST</option>
+                                    <option value="t199">Software Packages - Other - Software Packages</option>
+                                    <option value="t200">Software Packages - Pagemaker</option>
+                                    <option value="t201">Software Packages - Pathworks</option>
+                                    <option value="t202">Software Packages - Peachtree</option>
+                                    <option value="t203">Software Packages - Pro - Quest</option>
+                                    <option value="t204">Software Packages - ProTools
+                                    <option value="t205">Software Packages - Quark</option>
+                                    <option value="t206">Software Packages - Quattro Pro</option>
+                                    <option value="t207">Software Packages - Quick Books</option>
+                                    <option value="t208">Software Packages - Quicken</option>
+                                    <option value="t209">Software Packages - SAS</option>
+                                    <option value="t210">Software Packages - SAULT</option>
+                                    <option value="t211">Software Packages - SPSS</option>
+                                    <option value="t212">Software Packages - VISIO</option>
+                                    <option value="t213">Software Packages - WordPerfect</option>
+                                    <option value="t214">SQL Programming</option>
+                                    <option value="t215">Systems Support</option>
+                                    <option value="t216">Telecommunications</option>
+                                    <option value="t217">Web Design</option>
+                                        </select>
+                                        </label>
+                                    </p>
+                                    
+                                    <p>
+                                       <label>
+                                    Additional Skills:
+                                        <select name="adskill[]" multiple class="chosen-select">
+                                    <option value="as1">Accounting/Bookkeeping</option>
+                                    <option value="as2">Analytical Problem Solving</option>
+                                    <option value="as3">Arbitrating/Meditating/Resolving Conflicts</option>
+                                    <option value="as4">Assessing Priorities/Time Management</option>
+                                    <option value="as5">Athletics Coaching</option>
+                                    <option value="as6">Communication</option>
+                                    <option value="as7">Counseling/Advising</option>
+                                    <option value="as8">Cross Cultural Competence</option>
+                                    <option value="as9">Customer Service</option>
+                                    <option value="as10">Data Interpretation</option>
+                                    <option value="as11">Decision Making</option>
+                                    <option value="as12">Dependable</option>
+                                    <option value="as13">Editing</option>
+                                    <option value="as14">Enterprising</option>
+                                    <option value="as15">Establishing Procedures/Rules</option>
+                                    <option value="as16">Event/Program Planning</option>
+                                    <option value="as17">Inventive</option>
+                                    <option value="as18">Maintaining Systems</option>
+                                    <option value="as19">Managing Crisis</option>
+                                    <option value="as20">Managing People</option>
+                                    <option value="as21">Media Skills (Video & Film)</option>
+                                    <option value="as22">Mentoring/Motivating Others</option>
+                                    <option value="as23">Negotiating</option>
+                                    <option value="as24">Organized</option>
+                                    <option value="as25">Performing Arts</option>
+                                    <option value="as26">Promoting/Marketing/Selling</option>
+                                    <option value="as27">Public Speaking</option>
+                                    <option value="as28">Quantitative Skills/Working with Numbers</option>
+                                    <option value="as29">Research/Investigating</option>
+                                    <option value="as30">Self-starting/Taking initiative</option>
+                                    <option value="as31">Strategizing</option>
+                                    <option value="as32">Synthesizing Information</option>
+                                    <option value="as33">Teaching/Training</option>
+                                    <option value="as34">Working in Teams</option>
+                                    <option value="as35">Working Independently</option>
+                                    <option value="as36">Working Under Pressure/Meeting Deadlines</option>
+                                    <option value="as37">Working with Theories</option>
+                                    <option value="as38">Writing</option>
+                                        </select>
+                                        </label> 
+                                    </p>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Additional Information</legend>
+                                <div style="float:left;">
+                                    <p>
+                                        <label>
+                                        Career Objectives:
+                                        <input type='text' name='cobj' />
+                                        </label>
+                                    </p>
+                                    <dl>
+                                        <dt><label>Allow Employers To View My Resume/Profile?</label></dt>
+                                        <dd>
+                                            <label><input type='radio' name='ai1' value='y' checked='checked' /> Yes</label> 
+                                            <label><input type='radio' name='ai1' value='n' /> No</label>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                    <dt><label>Gradleaders Recruiting Inclusion Opt Out</label></dt>
+                                    <dd>
+                                        <label><input type='radio' name='ai2' value='y' checked='checked' /> Yes</label> 
+                                        <label><input type='radio' name='ai2' value='n' /> No</label>
+                                    </dd>
+                                </dl>
+                                <label>
+                                </div>
+                                <div style="float:right;">
+                                    <p>
+                                         <label>
+                                    Job Target *:
+                                    <select name="jobtarget[]" class="chosen-select" multiple required>
+                                    <option value="jt1">Accounting</option>
+                                    <option value="jt2">Agriculture, Food & Natural Resources</option>
+                                    <option value="jt3">Architecture & Construction</option>
+                                    <option value="jt4">Arts, A/V Technology & Communications</option>
+                                    <option value="jt5">Business Management & Administration</option>
+                                    <option value="jt6">Education & Training</option>
+                                    <option value="jt7">Finance</option>
+                                    <option value="jt8">Government & Public Administration</option>
+                                    <option value="jt9">Health Sciences</option>
+                                    <option value="jt10">Hospitality, Sports Teams/ Venues and Tourism</option>
+                                    <option value="jt11">Housing & Urban Development</option>
+                                    <option value="jt12">Human Service</option>
+                                    <option value="jt13">Law,Public Safety,Corrections & Security</option>
+                                    <option value="jt14">Manufacturing</option>
+                                    <option value="jt15">Marketing</option>
+                                    <option value="jt16">Science,Technology,Engineering & Mathematics</option>
+                                    <option value="jt17">Transportation, Distribution & Logistics</option>
+                                        </select>
+                                         </label>
+                                    </p>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Controller Information</legend>
+                                <div style="float:left;">
+                                    <p>
+                                        <label>
+                                        Z Number *:
+                                        <input type='text' name='znum' required>
+                                        </label>
+                                    </p>
+                                </div>
+                            </fieldset>
+                            
+                            <input type="button" value="Save" />
+                            <input type="submit" value="Submit" />      
+                        </form>
+			</div>
+			
+			<div id="ViewInternships" class="content">
+				<h2>Viewing and Adding New Internships:</h2>
+				<fieldset>
+					<div class="currentInternships">
+						<legend>Your Current Internships:</legend>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div class="newInternshipsq">
+						<legend>New Internship Information</legend>
+					</div>
+				</fieldset>
+				<!--<select id="reportSelect">
+					<option value="internship">Internship</option>
+					<option value="job">Job</option>
+				</select>
+				<div id="reportinginternship">
+					<div id="RIContentLeft">
+					<div class="interndataform">
+						<label for="internshipTitle"><span class="required">*</span>Internship Title: </label><br>
+						<input type="text" name="internshipTitle">
+					</div>
+					<div class="interndataform">
+						<label for="department"><span class="required">*</span>Department: </label><br>
+						<input type="text" name="department">				
+					</div>
+					<div class="interndataform">
+						<label for="startDate"><span class="required">*</span>Start Date: </label><br/>
+						<input type="text" name="startDate">
+					</div>
+					<div class="interndataform">
+						<label for="endDate"><span class="required">*</span>End Date: </label><br/>
+						<input type="text" name="endDate">
+					</div>
+					<div class="interndataform">
+						<label for="salary"><span class="required">*</span>Salary: </label><br/>
+						<input type="text" name="salary">
+					</div>
+					<div class="interndataform">
+						<label for="salaryType"><span class="required">*</span>Salary Type: </label><br/>
+						<select name="salaryType" id="salaryTypeSelect">
+							<option value="blank">Hourly</option>
+							<option value="hourly">Hourly</option>
+							<option value="unpaid">Unpaid</option>
+							<option value="stipend">Stipend</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+				</div>
+					<div id="RIContentRight">
+					<div class="interndataform">
+						<label for="PartOrFullTime"><span class="required">*</span>Part time or Full time: </label><br>
+						<select name="partOrFullTime" id="partOrFullTime">
+							<option value="blank"></option>
+							<option value="PartTime">Part Time</option>
+							<option value="FullTime">Full Time</option>
+						</select>
+					</div>
+					<div class="interndataform">
+						<label for="hrsPerWeek"><span class="required">*</span>Estimated Hours per Week: </label><br>
+						<input type="text" name="hrsPerWeek">				
+					</div>
+					<div class="interndataform">
+						<label for="additionalCompensation"><span class="required">*</span>Additional Compensation: </label><br/>
+						<input type="text" name="additionalCompensation">
+					</div>
+					<div class="interndataform">
+						<label for="workedHereBefore"><span class="required">*</span>Have you interned here previously?: </label><br/>
+						<select name="workedHereBefore" id="workedHereBefore">
+							<option value="blank"></option>
+							<option value="yes">Yes</option>
+							<option value="no">No</option>
+						</select>
+					</div>
+				</div>
+			</div>-->
+			</div>
+		</div>
+		
+	<script type="text/javascript" src="./js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="./js/prototype.js"></script>
+	<script type="text/javascript" src="./js/jquery.multiselect.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui.js"></script>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+	<script src="./js/chosen.jquery.js" type="text/javascript"></script>
+	<script src="./js/prism.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
