@@ -1,0 +1,24 @@
+.student_info {
+    margin: 10px 100px;
+    border: 2px solid black;
+    padding: 5px 10px;
+    float: left;
+}
+
+label {
+    font-weight: bold;
+    /*padding-right: 50px;*/
+    margin-right: 50px;
+    text-align: left;
+    padding: 5px;
+    display: inline-table;
+}
+
+#info {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#button {
+    float: right;
+}

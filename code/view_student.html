@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Students</title>
+        <link rel="stylesheet" href="test.css" type="text/css">
+    </head>
+    <body>
+        <div class="search">
+            <form>
+                Search By Last Name: <input type="text" size="30" onkeyup="showResult(this.value)">
+            </form>
+        </div>
+        <div class="student_info">
+            <form method="POST" action="stprofile.php" id="button">
+                <p hidden name="STDENT ID FROM DB"></p>
+                <input type="submit" name="view_profile" value="View Profile">
+            </form>
+            <!--<div style="float:left">-->
+            <label>
+                Last Name: <span id="info">__________</span>                
+            </label>
+            <label>
+                First Name: <span id="info">__________</span> 
+            </label>
+            
+       <!--     <label>
+                Middle Initial: <span id="info">_</span> 
+            </label>-->
+            <br/>
+            <!--<hr>-->
+            <form method="POST" action="stinternship.php" id="button">
+                <p hidden name="STDENT ID FROM DB"></p>
+                <input type="submit" name="view_internships" value="View Internships/Jobs">
+            </form>
+            <label>
+                Email: <span id="info">____________@fau.edu</span>
+            </label>
+            <label>
+                Z Number: <span id="info">Z_________</span>
+            </label>
+            <!--</div>-->
+                <br/>
+            <!--<hr>-->
+            <!--<label>
+                GPA: <span id="info">____</span>
+            </label>
+            <label>
+               Major: <span id="info">_________</span>
+            </label>
+            <label>
+                Class Standing: <span id="info">__________</span>
+            </label>-->
+        </div>
+        
+        <script src="search.js"></script>
+    </body>
+</html>
