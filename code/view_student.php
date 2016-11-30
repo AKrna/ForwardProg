@@ -96,13 +96,21 @@ if(isset($_SESSION["sid"])) {
         //$i = 0;
         foreach ($PIvalues as $key => $val ) {
             //i++;
-            echo '<label> Last name: '.$PIvalue['LastName']. '</label>
+            echo '
+            <form method="POST" action="stprofile.php" id="button">
+                <p hidden name="STDENT ID FROM DB"></p>
+                <input type="submit" name="view_profile" value="View Profile">
+            </form>
+            <label> Last name: '.$PIvalue['LastName']. '</label>
             <label>First Name: '.$PIvalue['FirstName']. '</label>
-            <button name="view_profile" href="stprofile.php">View Profile</button>
             <br/>
+            <form method="POST" action="stinternship.php" id="button">
+                <p hidden name="STDENT ID FROM DB"></p>
+                <input type="submit" name="view_internships" value="View Internships/Jobs">
+            </form>
             <label>Z Number: '.$PIvalue['Znumber'].'</label>
             <label>Email Address: '.$PIvalue['EmailAddress1'].'</label>
-            <button name="view_internships" href="stinternship.php">View Internships/Jobs</button>';
+            ';
         }
             '</div>
 		
