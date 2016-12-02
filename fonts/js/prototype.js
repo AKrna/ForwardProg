@@ -15,27 +15,17 @@ function openPage(event, tabName) {
     event.currentTarget.className += " active";
 }
 
-function openNav(){
-	document.getElementById("mainNav").style.width = "250px";
-	document.getElementById("mainPage").style.marginLeft = "250px";
-}
-
-function closeNav(){
-	document.getElementById("mainNav").style.width = "0";
-	document.getElementById("mainPage").style.marginLeft = "0";
-}
-
 document.getElementById("defaultOpen").click();
 
 $(document).ready(function (){
-		/*$(".button").hover(function() {
-			$(this).css("background-color", "graye");
+		$(".button").hover(function() {
+			$(this).css("background-color", "yellow");
 			$(this).css("color", "black");
 		}, function() {
 			$(this).css("background-color", "#3f51b5");
 			$(this).css("color", "white");
-		});*/
-             
+		});
+	
 		$(".chosen-select").chosen({width: "350px"});
 		$(".chosen-select2").chosen({width: "150px"});
 });

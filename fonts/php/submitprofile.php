@@ -4,35 +4,9 @@ require_once './login.php'; /// for sanitize function
 ?>
 
 <?php
-
-    $check_query = "SELECT * FROM StudentPersonalInformation WHERE sid = '".$_SESSION["sid"]."' ";
-    $result = mysqli_query($db,$check_query);
-    $numrows = mysqli_num_rows($result);
-    if($numrows > 0)
-    {
-        $deletestmt = "Delete from StudentPersonalInformation Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-        $deletestmt = "Delete from StudentAdditionalSkills Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-        $deletestmt = "Delete from StudentAdditionaInfo Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-        $deletestmt = "Delete from StudentFLSkills Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-        $deletestmt = "Delete from StudentDemographics Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-        $deletestmt = "Delete from StudentJobSkills Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-        $deletestmt = "Delete from StudentJobLocation Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-        $deletestmt = "Delete from StudentTechExperience Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-        $deletestmt = "Delete from StudentJobTarget Where sid = '". $_SESSION["sid"] ."'";
-        mysqli_query($db,$deletestmt);
-    }
-
-
-
-$sid = $_SESSION["sid"];
+session_start();
+$_SESSION["sid"] = 1;
+$sid = sanitize($_SESSION["sid"]);
 $znum = sanitize($_POST["znum"]);
 $fname = sanitize($_POST["fname"]);
 $minitial = sanitize($_POST["minitial"]);
@@ -116,7 +90,7 @@ foreach($_POST["FLskills"] as $language)
 //tech experience
 foreach($_POST["techexp"] as $techexp)
 {
-    $mysqlte = "INSERT INTO StudentTechExperience VALUES('$sid', '$techexp')";
+    $mysqlte = "INSERT INTO StudentTEchExperience VALUES('$sid', '$techexp')";
     mysqli_query($db,$mysqlte);
 
 }

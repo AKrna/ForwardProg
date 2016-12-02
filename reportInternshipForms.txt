@@ -1,0 +1,27 @@
+REPORT A HIRE: 
+*Internship Title:
+Organization: 
+						|Next Page|
+
+*Internship Title:				*Part or Full Time:
+*Department:					*Estimated hours per week:
+*Start Date:					*Additional Compensation:
+*End Date:					*Have you interned here previously?:
+*Salart:					Section for Status Of Internship validation.
+*Salary Type:						Pending/Confirmed
+						*How does this position further 
+						 your professional/career goals?
+
+_____________________________________________________________________________________________
+
+WORK INFORMATION: 
+
+*Supervisor:					*ZIP Code:
+*Supervisor Title:				Map:(not necessary)
+*Address Line 1:				
+Address Line 2:					*Phone Number:
+*City: 						Fax:
+*State:						*Supervisor Email:	
+
+									
+								|Save| |Cancel|
