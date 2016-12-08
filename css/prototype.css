@@ -19,6 +19,14 @@ html body{
 	margin: 5px 0 5px 0;
 }
 
+.innercontent {
+	display: none;
+	position: relative;
+	padding: 10px 16px;
+	border: 1px solid #000;
+	margin: 5px 0 5px 0;
+}
+
 /*This is all the css for the sidebar*/
 
 .sidebar {

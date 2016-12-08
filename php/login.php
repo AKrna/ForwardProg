@@ -36,7 +36,7 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
         $row = mysqli_fetch_assoc($result);
         $aid =$row['aid'];
         $_SESSION["aid"]=$aid;
-        header("location: ./../advisorHome.html");
+        header("location: ./../advisorHome.php");
         exit;
     }
     

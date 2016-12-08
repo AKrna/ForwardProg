@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<link href="./css/mycss.css" type="text/css" rel="stylesheet">
+<form action="./php/studentInternship_sans.php" method="post">
+
+    <fieldset>
+        <legend>Student Control Info</legend>
+        <p><label> First Name*: </label><br>
+                            <input type="text" name="Fname"></p>
+                        <p><label>Last Name:</label><br>
+                            <input type="text" name="Lname"></p>
+                        <p><label> Znumber*: </label><br>
+                            <input type="text" name="Znum"></p>
+        
+    </fieldset>    
+                    <fieldset>
+                        <legend>Information</legend>
+                        <div style="float: left;">
+                        <p><label> Internship Title*: </label><br>
+                            <input type="text" name="internshipTitle"></p>
+                        <p><label>Organization:</label><br>
+                            <input type="text" name="Organizationi"></p>
+                        <p><label> Department*: </label><br>
+                            <input type="text" name="departmenti"></p>
+                        <p><label> Start Date*:</label>
+                            <input type="date" name="startDatei" >
+                            <br>
+                            <label> End Date*: </label>
+                            <input type="date" name="endDatei" >
+
+                        </p>
+                        <p><label> Salary*:</label> <br>
+                                <input type="text" name="salaryi">
+                        </p>
+                        <p>
+                         <label>
+                             Salary Type*:<br>
+                        <select name="salaryType">
+                            <option value="blanki">-------</option>
+                            <option value="hourlyi">Hourly</option>
+                            <option value="unpaidi">Unpaid</option>
+                            <option value="stipendi">Stipend</option>
+                            <option value="otheri">Other</option>
+                        </select>
+                         </label>
+                    </p>
+                        </div>
+                        <div style="float: right;">
+                        <dl>
+                    <dt><label> Type Of Employment*:</label></dt>
+                    <dd>
+                        <label><input type="radio" name="ii1" value="in" checked="checked" /> Internship</label> 
+                        <label><input type="radio" name="ii1" value="ft" />Full Time</label>
+                        <label><input type="radio" name="ii1" value="pt" checked="checked" /> Part Time</label> 
+                        <label><input type="radio" name="ii1" value="ct" />Contract <label>
+                    </dd>
+                        </dl>
+                            <p><label> Estimated Hours Per Week*: </label><br>
+                                <input type="text" name="hrsPerWeeki"></p>
+                            <p><label> Additional Compensation*: </label><br/>
+                                <input type="text" name="additionalCompensationi"></p>
+                            <dl>
+                    <dt><label> Have You Worked Here Previously?*:</label></dt>
+                    <dd>
+                        <label><input type="radio" name="ii2" value="y" checked="checked" /> Yes</label> 
+                        <label><input type="radio" name="ii2" value="n" /> No</label>
+                    </dd>
+                        </dl>
+                             <dl>
+                        <dt><label>How Does This Position Further Your Professional/Career Goals?*:</label></dt>
+                        <dd>
+                            <textarea rows="4" cols="75" name="goals"></textarea>
+                        </dd>
+                        </dl>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Work Information</legend>
+                        <div style="float: left;">
+                            <p><label>Supervisor Name:</label><br>
+                                <input type="text" name="supervisorName"></p>
+                            <p><label>Supervisor Title*:</label><br>
+                                <input type="text" name="supervisorTitle"></p>
+                            <p><label>Address 1*:</label><br>
+                                <input type="text" name="address01"></p>
+                            <p><label>Address 2:</label><br>
+                                <input type="text" name="address02"></p>
+                            <p><label>City*:
+                                    <input type="text" name="cityw"></label>
+                                <label>State*:
+                                    <select name="state"><option value="s0" >--</option>
+                    <option value="sw1">International</option>        
+                    <option value="sw2">AL</option>
+                    <option value="sw3">AK</option>
+                    <option value="sw4">AZ</option>
+                    <option value="sw5">AR</option>
+                    <option value="sw6">CA</option>
+                    <option value="sw7">CO</option>
+                    <option value="sw8">CT</option>
+                    <option value="sw9">DE</option>
+                    <option value="sw10">FL</option>
+                    <option value="sw11">GA</option>
+                    <option value="sw12">HI</option>
+                    <option value="sw13">ID</option>
+                    <option value="sw14">IL</option>
+                    <option value="sw15">IN</option>
+                    <option value="sw16">IA</option>
+                    <option value="sw17">KS</option>
+                    <option value="sw18">KY</option>
+                    <option value="sw19">LA</option>
+                    <option value="sw20">ME</option>
+                    <option value="sw21">MD</option>
+                    <option value="sw22">MA</option>
+                    <option value="sw23">MI</option>
+                    <option value="sw24">MN</option>
+                    <option value="sw25">MS</option>
+                    <option value="sw26">MO</option>
+                    <option value="sw27">MT</option>
+                    <option value="sw28">NE</option>
+                    <option value="sw29">NV</option>
+                    <option value="sw30">NH</option>
+                    <option value="sw31">NJ</option>
+                    <option value="sw32">NM</option>
+                    <option value="sw33">NY</option>
+                    <option value="sw34">NC</option>
+                    <option value="sw35">ND</option>
+                    <option value="sw36">OH</option>
+                    <option value="sw37">OK</option>
+                    <option value="sw38">OR</option>
+                    <option value="sw39">PA</option>
+                    <option value="sw40">RI</option>
+                    <option value="sw41">SC</option>
+                    <option value="sw42">SD</option>
+                    <option value="sw43">TN</option>
+                    <option value="sw44">TX</option>
+                    <option value="sw45">UT</option>
+                    <option value="sw46">VT</option>
+                    <option value="sw47">VA</option>
+                    <option value="sw48">WA</option>
+                    <option value="sw49">WV</option>
+                    <option value="sw50">WI</option>
+                    <option value="sw51">WY</option>
+                        </select></label>
+                                <label>Zip Code*:
+                                    <input type="text" name="zcode"></label></p>
+                        </div>
+                        <div style="float: left;">
+                            <p><label>Supervisor Email*:</label><br>
+                                <input type="text" name="semail"></p>
+                            <p><label>Supervisor Phone Number*:</label><br>
+                                <input type="text" name="sphone"></p>
+                            <p><label>Fax:</label><br>
+                                <input type="text" name="sfax"></p>
+                        </div>
+                    </fieldset>
+
+                    <input type="button" value="Delete" name="delete"/>
+                    <input type="submit" value="Submit" />    
+        </form>

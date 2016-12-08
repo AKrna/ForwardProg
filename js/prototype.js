@@ -1,3 +1,9 @@
+$(document).ready(function (){
+		$(".chosen-select").chosen({width: "350px"});
+		$(".chosen-select2").chosen({width: "150px"});
+});
+
+
 function openPage(event, tabName) {
     var i, tabcontent, tablinks;
 	
@@ -7,6 +13,23 @@ function openPage(event, tabName) {
     }
 	
     tablinks = document.getElementsByClassName("tabLink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+	
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.className += " active";
+}
+
+function openInnerPage(event, tabName) {
+    var i, tabcontent, tablinks;
+	
+    tabcontent = document.getElementsByClassName("innercontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+	
+    tablinks = document.getElementsByClassName("innertabLink");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
@@ -26,16 +49,5 @@ function closeNav(){
 }
 
 document.getElementById("defaultOpen").click();
+document.getElementById("innerdefaultOpen").click();
 
-$(document).ready(function (){
-		/*$(".button").hover(function() {
-			$(this).css("background-color", "graye");
-			$(this).css("color", "black");
-		}, function() {
-			$(this).css("background-color", "#3f51b5");
-			$(this).css("color", "white");
-		});*/
-	
-		$(".chosen-select").chosen({width: "350px"});
-		$(".chosen-select2").chosen({width: "150px"});
-});
